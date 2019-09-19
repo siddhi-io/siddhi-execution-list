@@ -59,8 +59,7 @@ import java.util.List;
                 ),
                 @Parameter(name = "index",
                         description = "The value to be added.",
-                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
-                                DataType.FLOAT, DataType.BOOL, DataType.STRING},
+                        type = {DataType.INT},
                         dynamic = true,
                         optional = true,
                         defaultValue = "last"
