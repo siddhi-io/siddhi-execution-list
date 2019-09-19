@@ -34,8 +34,8 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class CreateFunctionTestCase {
-    private static final Logger log = Logger.getLogger(CreateFunctionTestCase.class);
+public class CreateFunctionExtensionTestCase {
+    private static final Logger log = Logger.getLogger(CreateFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);
     private volatile boolean eventArrived;
 

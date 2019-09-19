@@ -75,7 +75,7 @@ import java.util.List;
         }
 )
 
-public class CreateFunction extends FunctionExecutor<State> {
+public class CreateFunctionExtension extends FunctionExecutor<State> {
 
     @Override
     protected StateFactory<State> init(ExpressionExecutor[] expressionExecutors, ConfigReader configReader,
