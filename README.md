@@ -1,7 +1,7 @@
 ﻿Siddhi Execution List
 ======================================
 
-  [![Jenkins Build Status](https://wso2.org/jenkins/job/siddhi/job/siddhi-execution-list/badge/icon)](https://wso2.org/jenkins/job/siddhi/job/siddhi-execution-map/)
+  [![Jenkins Build Status](https://wso2.org/jenkins/job/siddhi/job/siddhi-execution-list/badge/icon)](https://wso2.org/jenkins/job/siddhi/job/siddhi-execution-list/)
   [![GitHub Release](https://img.shields.io/github/release/siddhi-io/siddhi-execution-list.svg)](https://github.com/siddhi-io/siddhi-execution-list/releases)
   [![GitHub Release Date](https://img.shields.io/github/release-date/siddhi-io/siddhi-execution-list.svg)](https://github.com/siddhi-io/siddhi-execution-list/releases)
   [![GitHub Open Issues](https://img.shields.io/github/issues-raw/siddhi-io/siddhi-execution-list.svg)](https://github.com/siddhi-io/siddhi-execution-list/issues)
@@ -35,6 +35,6 @@ For installing this extension on various Siddhi execution environments refer Sid
 
 * We encourage users to ask questions and get support via <a target="_blank" href="https://stackoverflow.com/questions/tagged/siddhi">StackOverflow</a>, make sure to add the `siddhi` tag to the issue for better response.
 
-* If you find any issues related to the extension please report them on <a target="_blank" href="https://github.com/siddhi-io/siddhi-execution-map/issues">the issue tracker</a>.
+* If you find any issues related to the extension please report them on <a target="_blank" href="https://github.com/siddhi-io/siddhi-execution-list/issues">the issue tracker</a>.
 
 * For production support and other contribution related information refer <a target="_blank" href="https://siddhi.io/community/">Siddhi Community</a> documentation.

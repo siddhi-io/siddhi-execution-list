@@ -16,11 +16,12 @@
  * under the License.
  */
 
-
-package io.siddhi.extension.execution.list.function;
+package io.siddhi.extension.execution.list;
 
 import io.siddhi.annotation.Example;
 import io.siddhi.annotation.Extension;
+import io.siddhi.annotation.Parameter;
+import io.siddhi.annotation.ParameterOverload;
 import io.siddhi.annotation.ReturnAttribute;
 import io.siddhi.annotation.util.DataType;
 import io.siddhi.core.config.SiddhiQueryContext;
@@ -31,57 +32,75 @@ import io.siddhi.core.util.snapshot.state.State;
 import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * This is a implementation of list:create().
  */
 @Extension(
         name = "create",
         namespace = "list",
-        description = " ",
+        description = "Function creates a list of all values.",
         parameters = {
-                /*@Parameter(name = " ",
-                        description = " " ,
-                        dynamic = false/true,
-                        optional = true/false, defaultValue = " ",
-                        type = {DataType.INT, DataType.BOOL, DataType.STRING, DataType.DOUBLE, }),
-                        type = {DataType.INT, DataType.BOOL, DataType.STRING, DataType.DOUBLE, }),*/
+                @Parameter(name = "value1",
+                        description = "Value 1",
+                        type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
+                                DataType.BOOL, DataType.STRING},
+                        dynamic = true,
+                        optional = true,
+                        defaultValue = "<EMPTY_STRING>"
+                ),
         },
         returnAttributes = {
                 @ReturnAttribute(
-                        description = " ",
+                        description = "List of values given in the function parameter",
                         type = DataType.OBJECT
                 )
         },
+        parameterOverloads = {
+                @ParameterOverload(),
+                @ParameterOverload(parameterNames = {"value1"}),
+                @ParameterOverload(parameterNames = {"value1", "..."}),
+        },
         examples = {
                 @Example(
-                        syntax = " ",
-                        description = " "
-                )
+                        syntax = "list:create(1, 2, 3, 4, 5, 6)",
+                        description = "This returns a list with values `1`, `2`, `3`, `4`, `5` and `6`."
+                ),
+                @Example(
+                        syntax = "list:create()",
+                        description = "This returns an empty list.")
         }
 )
 
-public class CreateFunction extends FunctionExecutor {
+public class CreateFunction extends FunctionExecutor<State> {
 
     @Override
-    protected StateFactory init(ExpressionExecutor[] expressionExecutors, ConfigReader configReader,
+    protected StateFactory<State> init(ExpressionExecutor[] expressionExecutors, ConfigReader configReader,
                                 SiddhiQueryContext siddhiQueryContext) {
         return null;
     }
 
-
     @Override
     protected Object execute(Object[] data, State state) {
-        return null;
+        return new ArrayList<>(Arrays.asList(data));
     }
 
     @Override
     protected Object execute(Object data, State state) {
-        return null;
+        if (data == null) {
+            return new ArrayList<>();
+        }
+        List<Object> list = new ArrayList<>();
+        list.add(data);
+        return list;
     }
 
     @Override
     public Attribute.Type getReturnType() {
-        return null;
+        return Attribute.Type.OBJECT;
     }
 
 }
