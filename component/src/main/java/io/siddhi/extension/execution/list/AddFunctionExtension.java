@@ -47,18 +47,18 @@ import java.util.List;
         description = "Function returns the updated list after adding the given value.",
         parameters = {
                 @Parameter(name = "list",
-                        description = "The map to which the value should be added.",
+                        description = "The list to which the value should be added.",
                         type = DataType.OBJECT,
                         dynamic = true
                 ),
                 @Parameter(name = "value",
                         description = "The value to be added.",
-                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
+                        type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
                                 DataType.BOOL, DataType.STRING},
                         dynamic = true
                 ),
                 @Parameter(name = "index",
-                        description = "The value to be added.",
+                        description = "The index in which the value should to be added.",
                         type = {DataType.INT},
                         dynamic = true,
                         optional = true,
@@ -69,18 +69,21 @@ import java.util.List;
                 @ParameterOverload(parameterNames = {"list", "value"}),
                 @ParameterOverload(parameterNames = {"list", "value", "index"})
         },
-        returnAttributes = @ReturnAttribute(
-                description = "Returns the updated list with the value.", type = DataType.OBJECT),
+        returnAttributes =
+                @ReturnAttribute(
+                        description = "Returns the updated list with the value added.",
+                        type = DataType.OBJECT
+                ),
         examples = {
                 @Example(
-                syntax = "list:add(students , 'sam')",
-                description = "Function returns the updated list named students after adding the value " +
-                        "`sam` in the last index`."
+                        syntax = "list:add(stockSymbols, 'IBM')",
+                        description = "Function returns the updated list after adding the value `IBM` " +
+                                "in the last index."
                 ),
                 @Example(
-                        syntax = "list:add(students , 'Sam', 0)",
-                        description = "Function returns the updated list named students after adding the value " +
-                                "`Sam` in the 0th index`.")
+                        syntax = "list:add(stockSymbols, 'IBM', 0)",
+                        description = "Function returns the updated list after adding the value " +
+                                "`IBM` in the 0th index`.")
         }
 )
 public class AddFunctionExtension extends FunctionExecutor<State> {
@@ -99,7 +102,8 @@ public class AddFunctionExtension extends FunctionExecutor<State> {
         if (data[0] instanceof List) {
             list = (List) data[0];
         } else {
-            throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List");
+            throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                    data[0].getClass().getCanonicalName() + "'.");
         }
         if (data.length == 2) {
             list.add(data[1]);
@@ -111,7 +115,7 @@ public class AddFunctionExtension extends FunctionExecutor<State> {
 
     @Override
     protected Object execute(Object data, State state) {
-        //Since the map:put() function takes in 3 parameters, this method does not get called. Hence, not implemented.
+        //Since the list:add() function takes in 3 parameters, this method does not get called. Hence, not implemented.
         return null;
     }
 
