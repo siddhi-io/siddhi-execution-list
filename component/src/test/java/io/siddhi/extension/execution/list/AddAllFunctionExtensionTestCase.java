@@ -133,4 +133,43 @@ public class AddAllFunctionExtensionTestCase {
         );
         siddhiManager.createSiddhiAppRuntime(inStreamDefinition + query);
     }
+
+    @Test
+    public void testAddAllFunctionExtension4() throws InterruptedException {
+        log.info("AddAllFunctionExtension TestCase");
+        SiddhiManager siddhiManager = new SiddhiManager();
+
+        String inStreamDefinition = "\ndefine trigger startTrigger at 'start';";
+        String query = ("@info(name = 'query1') from startTrigger "
+                + "select list:create(1 ,  2 , 3 ) as list1, list:create(1, 4 , 5 , 6 ) as list2, "
+                + "list:create(2, 7 ,  8 , 9) as list3 "
+                + "insert into tmpStream;"
+                + "@info(name = 'query2') from tmpStream  "
+                + "select list:addAll(list:addAll(list1, list2, true), list3, true) as newList "
+                + "insert into outputStream;"
+        );
+
+        SiddhiAppRuntime siddhiAppRuntime = siddhiManager.createSiddhiAppRuntime(
+                inStreamDefinition + query);
+        siddhiAppRuntime.addCallback("outputStream", new StreamCallback() {
+            @Override
+            public void receive(Event[] events) {
+                for (Event event : events) {
+                    EventPrinter.print(events);
+                    count.incrementAndGet();
+                    ArrayList list = (ArrayList) event.getData(0);
+                    AssertJUnit.assertEquals(9, list.size());
+                    AssertJUnit.assertEquals(1, list.get(0));
+                    AssertJUnit.assertEquals(6, list.get(5));
+                    AssertJUnit.assertEquals(9, list.get(8));
+                    eventArrived = true;
+                }
+            }
+        });
+        siddhiAppRuntime.start();
+        SiddhiTestHelper.waitForEvents(100, 1, count, 60000);
+        AssertJUnit.assertEquals(1, count.get());
+        AssertJUnit.assertTrue(eventArrived);
+        siddhiAppRuntime.shutdown();
+    }
 }

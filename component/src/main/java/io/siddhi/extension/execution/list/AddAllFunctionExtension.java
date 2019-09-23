@@ -44,7 +44,7 @@ import java.util.List;
 @Extension(
         name = "addAll",
         namespace = "list",
-        description = "Function returns the updated list after adding all the values from another list.",
+        description = "Function returns the updated list after adding all the values from the given list.",
         parameters = {
                 @Parameter(name = "to.list",
                         description = "The list into which the values need to copied.",
@@ -55,40 +55,74 @@ import java.util.List;
                         description = "The list from which the values are copied.",
                         type = DataType.OBJECT,
                         dynamic = true
+                ),
+                @Parameter(name = "is.distinct",
+                        description = "If `true` returns list with distinct values",
+                        type = DataType.BOOL,
+                        optional = true,
+                        defaultValue = "false",
+                        dynamic = true
                 )
         },
         parameterOverloads = {
-                @ParameterOverload(parameterNames = {"to.list", "from.list"})
+                @ParameterOverload(parameterNames = {"to.list", "from.list"}),
+                @ParameterOverload(parameterNames = {"to.list", "from.list", "is.distinct"})
         },
-        returnAttributes = @ReturnAttribute(
-                description = "Returns the updated list after adding all the values.",
-                type = DataType.OBJECT),
-        examples = @Example(
-                syntax = "list:putAll(toList, fromList)",
-                description = "If `toList` contains values ('IBM', 'WSO2), and if `fromList` contains values " +
-                        "('IBM', 'XYZ') then the function returns updated `toList` with values " +
-                        "('IBM', 'WSO2', 'IBM', 'XYZ').")
+        returnAttributes =
+                @ReturnAttribute(
+                        description = "Returns the updated list after adding all the values.",
+                        type = DataType.OBJECT
+                ),
+        examples = {
+                @Example(
+                        syntax = "list:putAll(toList, fromList)",
+                        description =
+                                "If `toList` contains values ('IBM', 'WSO2), and if `fromList` " +
+                                "contains values ('IBM', 'XYZ') then the function returns updated `toList` " +
+                                "with values ('IBM', 'WSO2', 'IBM', 'XYZ')."
+                        ),
+                @Example(
+                        syntax = "list:putAll(toList, fromList, true)",
+                        description =
+                                "If `toList` contains values ('IBM', 'WSO2), and if `fromList` " +
+                                "contains values ('IBM', 'XYZ') then the function returns updated `toList` " +
+                                "with values ('IBM', 'WSO2', 'XYZ')."
+                        )
+                }
 )
 public class AddAllFunctionExtension extends FunctionExecutor<State> {
     private Attribute.Type returnType = Attribute.Type.OBJECT;
+    private boolean isDistinctCheck = false;
 
     @Override
     protected StateFactory<State> init(ExpressionExecutor[] attributeExpressionExecutors,
                                 ConfigReader configReader, SiddhiQueryContext siddhiQueryContext) {
+        this.isDistinctCheck = attributeExpressionExecutors.length == 3;
         return null;
     }
 
     @Override
     protected Object execute(Object[] data, State state) {
         if (!(data[0] instanceof List)) {
-            throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List.");
+            throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                    data[0].getClass().getCanonicalName() + "'.");
         }
         if (!(data[1] instanceof List)) {
-            throw new SiddhiAppRuntimeException("Second attribute value must be of type java.util.List.");
+            throw new SiddhiAppRuntimeException("Second attribute value must be of type java.util.List, but found '" +
+                    data[1].getClass().getCanonicalName() + "'.");
         }
         ArrayList<Object> list1 = (ArrayList<Object>) data[0];
         ArrayList<Object> list2 = (ArrayList<Object>) data[1];
-        list1.addAll(list2);
+
+        if (this.isDistinctCheck && (boolean) data[2]) {
+            list2.forEach((element) -> {
+                if (!list1.contains(element)) {
+                    list1.add(element);
+                }
+            });
+        } else {
+            list1.addAll(list2);
+        }
         return list1;
     }
 
