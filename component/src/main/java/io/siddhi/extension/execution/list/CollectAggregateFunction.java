@@ -46,7 +46,7 @@ import java.util.ArrayList;
                 @Parameter(
                         name = "value",
                         description = "Value of the list element",
-                        type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
+                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
                                 DataType.BOOL, DataType.STRING},
                         dynamic = true
                 ),

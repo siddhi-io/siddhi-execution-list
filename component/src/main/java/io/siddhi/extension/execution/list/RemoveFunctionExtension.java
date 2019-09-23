@@ -53,7 +53,7 @@ import java.util.List;
                 ),
                 @Parameter(name = "value",
                         description = "The value of the element that needs to removed.",
-                        type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
+                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
                                 DataType.BOOL, DataType.STRING},
                         dynamic = true
                 )

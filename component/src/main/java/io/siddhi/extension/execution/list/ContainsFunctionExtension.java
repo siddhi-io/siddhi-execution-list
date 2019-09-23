@@ -50,7 +50,7 @@ import java.util.List;
                 ),
                 @Parameter(name = "value",
                         description = "The value that needs to be checked.",
-                        type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
+                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
                                 DataType.BOOL, DataType.STRING},
                         dynamic = true
                 )

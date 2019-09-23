@@ -46,7 +46,7 @@ import java.util.List;
         parameters = {
                 @Parameter(name = "value1",
                         description = "Value 1",
-                        type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
+                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
                                 DataType.BOOL, DataType.STRING},
                         dynamic = true,
                         optional = true,

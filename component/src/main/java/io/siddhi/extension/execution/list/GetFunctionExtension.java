@@ -57,7 +57,7 @@ import java.util.List;
         returnAttributes = {
                 @ReturnAttribute(
                         description = "Values of the element in the given index",
-                        type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
+                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
                                 DataType.BOOL, DataType.STRING}
                 )
         },
