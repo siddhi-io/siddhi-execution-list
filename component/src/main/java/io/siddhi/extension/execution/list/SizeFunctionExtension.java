@@ -57,8 +57,8 @@ import java.util.List;
                 description = "Returns size of the list (`java.util.List`).",
                 type = DataType.INT),
         examples = @Example(
-                syntax = "list:size(students)",
-                description = "Returns size of the `students` list.")
+                syntax = "list:size(stockSymbols)",
+                description = "Returns size of the `stockSymbols` list.")
 )
 public class SizeFunctionExtension extends FunctionExecutor<State> {
 
@@ -84,6 +84,7 @@ public class SizeFunctionExtension extends FunctionExecutor<State> {
         if (data instanceof List) {
             return ((List) data).size();
         }
-        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List.");
+        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                data.getClass().getCanonicalName() + "'.");
     }
 }

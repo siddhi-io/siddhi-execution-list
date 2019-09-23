@@ -59,9 +59,9 @@ import java.util.List;
                 description = "Returns `true` if the arg is a list (`java.util.List`) and `false` if otherwise.",
                 type = DataType.BOOL),
         examples = @Example(
-                syntax = "list:isList(students)",
-                description = "Returns 'true' if the students is and an instance of `java.util.List` else it returns " +
-                        "`false`.")
+                syntax = "list:isList(stockSymbols)",
+                description = "Returns 'true' if the stockSymbols is and an instance of `java.util.List` else " +
+                        "it returns `false`.")
 )
 public class IsListFunctionExtension extends FunctionExecutor<State> {
     private Attribute.Type returnType = Attribute.Type.BOOL;

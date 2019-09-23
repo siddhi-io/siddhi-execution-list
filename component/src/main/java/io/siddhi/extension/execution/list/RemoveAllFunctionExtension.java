@@ -64,9 +64,9 @@ import java.util.List;
                 description = "Returns the updated list after removing all the values in the given list.",
                 type = DataType.OBJECT),
         examples = @Example(
-                syntax = "list:removeAll(students, finalYearStudents)",
-                description = "This returns the updated list, students after removing all the values " +
-                        "in finalYearStudents."
+                syntax = "list:removeAll(stockSymbols, latestStockSymbols)",
+                description = "This returns the updated list, stockSymbols after removing all the values " +
+                        "in latestStockSymbols."
         )
 )
 public class RemoveAllFunctionExtension extends FunctionExecutor<State> {
@@ -88,9 +88,11 @@ public class RemoveAllFunctionExtension extends FunctionExecutor<State> {
                 list1.removeAll(list2);
                 return list1;
             }
-            throw new SiddhiAppRuntimeException("Second attribute value must be of type java.util.List.");
+            throw new SiddhiAppRuntimeException("Second attribute value must be of type java.util.List, but found '" +
+                    data[1].getClass().getCanonicalName() + "'.");
         }
-        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List.");
+        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                data[0].getClass().getCanonicalName() + "'.");
     }
 
     @Override

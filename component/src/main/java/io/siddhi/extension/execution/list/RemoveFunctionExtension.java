@@ -32,12 +32,8 @@ import io.siddhi.core.util.config.ConfigReader;
 import io.siddhi.core.util.snapshot.state.State;
 import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
-import io.siddhi.query.api.exception.SiddhiAppValidationException;
-import org.apache.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * remove(ArrayList , value)
@@ -69,8 +65,8 @@ import java.util.Map;
                 description = "Returns the updated list after removing the value.",
                 type = DataType.OBJECT),
         examples = @Example(
-                syntax = "list:remove(students, 'Sam')",
-                description = "This returns the updated list, students after removing the value `Sam`."
+                syntax = "list:remove(stockSymbols, 'IBM')",
+                description = "This returns the updated list, stockSymbols after stockSymbols the value `IBM`."
         )
 )
 public class RemoveFunctionExtension extends FunctionExecutor<State> {
@@ -90,7 +86,8 @@ public class RemoveFunctionExtension extends FunctionExecutor<State> {
             list.remove(data[1]);
             return list;
         }
-        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List.");
+        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                data[0].getClass().getCanonicalName() + "'.");
     }
 
     @Override

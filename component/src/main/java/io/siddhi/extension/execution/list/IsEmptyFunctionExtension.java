@@ -59,8 +59,8 @@ import java.util.List;
                 description = "Returns `true` if the list is empty and `false` if otherwise.",
                 type = DataType.BOOL),
         examples = @Example(
-                syntax = "list:isEmpty(students)",
-                description = "Returns 'true' if the students list is empty else it returns `false`.")
+                syntax = "list:isEmpty(stockSymbols)",
+                description = "Returns 'true' if the stockSymbols list is empty else it returns `false`.")
 )
 public class IsEmptyFunctionExtension extends FunctionExecutor<State> {
     private Attribute.Type returnType = Attribute.Type.BOOL;
@@ -82,7 +82,8 @@ public class IsEmptyFunctionExtension extends FunctionExecutor<State> {
         if (data instanceof List) {
             return ((List) data).isEmpty();
         }
-        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List.");
+        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                data.getClass().getCanonicalName() + "'.");
     }
 
     @Override

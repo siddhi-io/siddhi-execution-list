@@ -66,8 +66,8 @@ import java.util.List;
         },
         examples = {
                 @Example(
-                        syntax = "list:get(students, 1)",
-                        description = "This returns the element in the 1st index in the students list."
+                        syntax = "list:get(stockSymbols, 1)",
+                        description = "This returns the element in the 1st index in the stockSymbols list."
                 )
         }
 )
@@ -85,7 +85,8 @@ public class GetFunctionExtension extends FunctionExecutor<State> {
         if (data[0] instanceof List) {
             list = (List) data[0];
         } else {
-            throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List");
+            throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                    data[0].getClass().getCanonicalName() + "'.");
         }
         try {
             return list.get((int) data[1]);
