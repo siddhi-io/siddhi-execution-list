@@ -72,7 +72,7 @@ import java.util.ArrayList;
         examples = {
                 @Example(
                         syntax = "from StockStream#window.lengthBatch(10)\n" +
-                                 "select list:collect(symbol) as stockDetails\n" +
+                                 "select list:collect(symbol) as stockSymbols\n" +
                                  "insert into OutputStream;",
                         description = "For the window expiry of 10 events, the collect() function will collect " +
                                 "attributes of `symbol` to a single list and return as stockSymbols."

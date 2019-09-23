@@ -42,7 +42,7 @@ import java.util.List;
 @Extension(
         name = "create",
         namespace = "list",
-        description = "Function creates a list of all values.",
+        description = "Function creates a list containing all values provided.",
         parameters = {
                 @Parameter(name = "value1",
                         description = "Value 1",

@@ -60,8 +60,8 @@ import java.util.List;
                 ),
         examples =
                 @Example(
-                        syntax = "list:clone(stockDetails)",
-                        description = "Function returns cloned list of stockDetails."
+                        syntax = "list:clone(stockSymbols)",
+                        description = "Function returns cloned list of stockSymbols."
                 )
 )
 public class CloneFunctionExtension extends FunctionExecutor<State> {

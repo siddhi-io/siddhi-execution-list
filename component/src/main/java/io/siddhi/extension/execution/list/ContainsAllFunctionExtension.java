@@ -32,7 +32,6 @@ import io.siddhi.core.util.config.ConfigReader;
 import io.siddhi.core.util.snapshot.state.State;
 import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
-import javafx.collections.ObservableList;
 
 import java.util.List;
 
@@ -42,17 +41,16 @@ import java.util.List;
 @Extension(
         name = "containsAll",
         namespace = "list",
-        description = "Function checks if the list contains all the values.",
+        description = "Function checks whether the list contains all the values in the given list.",
         parameters = {
                 @Parameter(name = "list",
                         description = "The list that needs to be checked on whether it contains all the values or not.",
                         type = {DataType.OBJECT},
                         dynamic = true
                 ),
-                //todo?
                 @Parameter(name = "given.list",
                         description = "The list which contains all the values to be checked.",
-                        type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
+                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
                                 DataType.BOOL, DataType.STRING},
                         dynamic = true
                 )
@@ -60,12 +58,14 @@ import java.util.List;
         parameterOverloads = {
                 @ParameterOverload(parameterNames = {"list", "given.list"})
         },
-        returnAttributes = @ReturnAttribute(
-                description = "Returns `true` if the list contains all the values and `false` if otherwise.",
-                type = DataType.BOOL),
+        returnAttributes =
+                @ReturnAttribute(
+                        description = "Returns `true` if the list contains all the values and `false` if otherwise.",
+                        type = DataType.BOOL
+                ),
         examples = @Example(
-                syntax = "list:containsAll(students, finalYearStudents)",
-                description = "Returns 'true' if the students list contains values in finalYearStudents " +
+                syntax = "list:containsAll(stockSymbols, latestStockSymbols)",
+                description = "Returns 'true' if the stockSymbols list contains values in latestStockSymbols " +
                         "else it returns `false`.")
 )
 public class ContainsAllFunctionExtension extends FunctionExecutor<State> {
@@ -84,9 +84,11 @@ public class ContainsAllFunctionExtension extends FunctionExecutor<State> {
             if (data[1] instanceof List) {
                 return ((List<Object>) data[0]).containsAll((List<Object>) data[1]);
             }
-            throw new SiddhiAppRuntimeException("Second attribute value must be of type java.util.List.");
+            throw new SiddhiAppRuntimeException("Second attribute value must be of type java.util.List, but found '" +
+                    data[1].getClass().getCanonicalName() + "'.");
         }
-        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List.");
+        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                data[0].getClass().getCanonicalName() + "'.");
     }
 
     @Override

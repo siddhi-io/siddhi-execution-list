@@ -34,7 +34,6 @@ import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * contains(Object)
@@ -42,7 +41,7 @@ import java.util.Map;
 @Extension(
         name = "contains",
         namespace = "list",
-        description = "Function checks if the list contains the value.",
+        description = "Function checks whether the list contains the specific value.",
         parameters = {
                 @Parameter(name = "list",
                         description = "The list that needs to be checked on whether it contains the value or not.",
@@ -50,7 +49,7 @@ import java.util.Map;
                         dynamic = true
                 ),
                 @Parameter(name = "value",
-                        description = "The value to be checked.",
+                        description = "The value that needs to be checked.",
                         type = {DataType.INT, DataType.LONG, DataType.FLOAT, DataType.DOUBLE,
                                 DataType.BOOL, DataType.STRING},
                         dynamic = true
@@ -59,12 +58,16 @@ import java.util.Map;
         parameterOverloads = {
                 @ParameterOverload(parameterNames = {"list", "value"})
         },
-        returnAttributes = @ReturnAttribute(
-                description = "Returns `true` if the list contains the value and `false` if otherwise.",
-                type = DataType.BOOL),
-        examples = @Example(
-                syntax = "list:contains(students, 'Sam')",
-                description = "Returns 'true' if the students list contains value `Sam` else it returns `false`.")
+        returnAttributes =
+                @ReturnAttribute(
+                        description = "Returns `true` if the list contains the value and `false` if otherwise.",
+                        type = DataType.BOOL),
+        examples =
+                @Example(
+                        syntax = "list:contains(stockSymbols, 'IBM')",
+                        description = "Returns 'true' if the stockSymbols list contains value `IBM` else it " +
+                                "returns `false`."
+                )
 )
 public class ContainsFunctionExtension extends FunctionExecutor<State> {
     private Attribute.Type returnType = Attribute.Type.BOOL;
@@ -81,7 +84,8 @@ public class ContainsFunctionExtension extends FunctionExecutor<State> {
         if (data[0] instanceof List) {
             return ((List) data[0]).contains(data[1]);
         }
-        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List.");
+        throw new SiddhiAppRuntimeException("First attribute value must be of type java.util.List, but found '" +
+                data[0].getClass().getCanonicalName() + "'.");
     }
 
     @Override
