@@ -34,7 +34,6 @@ import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * clear(ArrayList)

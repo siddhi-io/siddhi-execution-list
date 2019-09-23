@@ -46,7 +46,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implementation class for map:tokenize()
+ * Implementation class for list:tokenize()
  */
 @Extension(
         namespace = "list",

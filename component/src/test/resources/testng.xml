@@ -17,7 +17,27 @@ limitations under the License.
 <suite name="Siddhi-execution-list-Test-Suite">
     <test name="Siddhi-execution-list-tests" preserve-order="true" parallel="false">
         <classes>
-
+            <class name="io.siddhi.extension.execution.list.AddAllFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.AddFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.CloneFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.CollectAggregatorFunctionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.ContainsAllFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.ContainsFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.CreateFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.GetFunctionExtensionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.IndexOfFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.IsEmptyFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.IsListFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.MergeAggregateFunctionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.RemoveAllFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.RemoveFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.SizeFunctionExecutorTestCase"/>
+            <class name="io.siddhi.extension.execution.list.SortFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.TokenizeStreamProcessorTestCase"/>
+            <class name="io.siddhi.extension.execution.list.ClearFunctionExecutorTestCase"/>
+            <class name="io.siddhi.extension.execution.list.RemoveByIndexFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.RetainAllFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.SetFunctionExtensionTestCase"/>
         </classes>
     </test>
 </suite>
