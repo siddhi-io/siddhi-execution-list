@@ -30,7 +30,6 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class IndexOfFunctionExtensionTestCase {

@@ -50,7 +50,7 @@ import java.util.List;
                 ),
                 @Parameter(name = "value",
                         description = "Value for which last index needs to be identified.",
-                        type = {DataType.OBJECT, DataType.OBJECT,DataType.INT, DataType.LONG, DataType.FLOAT,
+                        type = {DataType.OBJECT, DataType.INT, DataType.LONG, DataType.FLOAT,
                                 DataType.DOUBLE, DataType.BOOL, DataType.STRING},
                         dynamic = true
                 )
