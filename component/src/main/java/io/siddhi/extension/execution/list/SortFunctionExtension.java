@@ -138,7 +138,7 @@ public class SortFunctionExtension extends FunctionExecutor<State> {
             if (firstElement instanceof String) {
                 ((List<String>) dataList).sort(String.CASE_INSENSITIVE_ORDER);
             } else if (firstElement instanceof Integer || firstElement instanceof Long ||
-                                        firstElement instanceof Double || firstElement instanceof Float ) {
+                                        firstElement instanceof Double || firstElement instanceof Float) {
                 dataList.sort(Comparator.naturalOrder());
             } else {
                 throw new SiddhiAppRuntimeException("list:sort() only supported for lists of type <STRING|INT|" +

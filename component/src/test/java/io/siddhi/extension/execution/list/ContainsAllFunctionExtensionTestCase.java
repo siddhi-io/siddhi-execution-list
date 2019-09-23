@@ -31,7 +31,6 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ContainsAllFunctionExtensionTestCase {
@@ -50,15 +49,15 @@ public class ContainsAllFunctionExtensionTestCase {
         log.info("ContainsValueFunctionExtension TestCase");
         SiddhiManager siddhiManager = new SiddhiManager();
 
-        String inStreamDefinition = "\ndefine stream inputStream (symbolList string, price long, volume long);";
+        String inStreamDefinition = "\ndefine stream inputStream (symbol string, price long, volume long);";
         String query = ("@info(name = 'query1') from inputStream " +
-                "select symbolList,price,list:create() as tmpList" +
+                "select symbol,price,list:create() as tmpList" +
                 " insert into tmpStream;" +
-                "@info(name = 'query2') from tmpStream  select symbolList,price,tmpList, " +
+                "@info(name = 'query2') from tmpStream  select symbol, price, tmpList, " +
                 " list:add(list:add(tmpList,'IBM'),'WSO2') as list1" +
                 " insert into outputStream;" +
                 "@info(name = 'query3') from outputStream " +
-                "select list:containsAll(list1, symbolList) as doesContains1 " +
+                "select list:containsAll(list1, list:create(symbol)) as doesContains1 " +
                 " insert into outputStream2;"
         );
 
@@ -76,7 +75,7 @@ public class ContainsAllFunctionExtensionTestCase {
                         eventArrived = true;
                     }
                     if (count.get() == 2) {
-                        AssertJUnit.assertEquals(Boolean.FALSE, event.getData(0));
+                        AssertJUnit.assertEquals(Boolean.TRUE, event.getData(0));
                         eventArrived = true;
                     }
                     if (count.get() == 3) {
@@ -89,19 +88,10 @@ public class ContainsAllFunctionExtensionTestCase {
 
         InputHandler inputHandler = siddhiAppRuntime.getInputHandler("inputStream");
         siddhiAppRuntime.start();
-        ArrayList<String> event1 = new ArrayList<>();
-        event1.add("IBM");
 
-        ArrayList<String> event2 = new ArrayList<>();
-        event2.add("XYZ");
-        event2.add("WSO2");
-
-        ArrayList<String> event3 = new ArrayList<>();
-        event3.add("XYZ");
-
-        inputHandler.send(new Object[]{event1, 100, 100L});
-        inputHandler.send(new Object[]{event2, 200, 200L});
-        inputHandler.send(new Object[]{event3, 300, 200L});
+        inputHandler.send(new Object[]{"IBM", 100, 100L});
+        inputHandler.send(new Object[]{"WSO2", 200, 200L});
+        inputHandler.send(new Object[]{"XYZ", 300, 200L});
         SiddhiTestHelper.waitForEvents(100, 3, count, 60000);
         AssertJUnit.assertEquals(3, count.get());
         AssertJUnit.assertTrue(eventArrived);
