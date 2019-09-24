@@ -36,7 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * clear(ArrayList)
+ * clear(LinkedList)
  */
 @Extension(
         name = "clear",

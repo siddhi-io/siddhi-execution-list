@@ -33,6 +33,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MergeAggregateFunctionTestCase {
@@ -80,24 +81,24 @@ public class MergeAggregateFunctionTestCase {
         InputHandler inputHandler = siddhiAppRuntime.getInputHandler("cscStream");
         siddhiAppRuntime.start();
 
-        List<String> nameList = new ArrayList<>();
+        List<String> nameList = new LinkedList<>();
 
         nameList.add("Harry");
         nameList.add("Henry");
         nameList.add("Potter");
 
-        List<String> addressList = new ArrayList<>();
+        List<String> addressList = new LinkedList<>();
         nameList.add("4");
         nameList.add("Private Drive");
 
-        List<String> contactList = new ArrayList<>();
+        List<String> contactList = new LinkedList<>();
         nameList.add("Hedwig");
 
-        List<String> entry2 = new ArrayList<>();
+        List<String> entry2 = new LinkedList<>();
         entry2.addAll(nameList);
         entry2.addAll(addressList);
 
-        List<String> entry3 = new ArrayList<>();
+        List<String> entry3 = new LinkedList<>();
         entry3.addAll(contactList);
         entry2.addAll(addressList);
 
@@ -153,27 +154,27 @@ public class MergeAggregateFunctionTestCase {
         InputHandler inputHandler = siddhiAppRuntime.getInputHandler("cscStream");
         siddhiAppRuntime.start();
 
-        List<String> nameList = new ArrayList<>();
+        List<String> nameList = new LinkedList<>();
         nameList.add("Harry");
         nameList.add("Harry");
         nameList.add("Potter");
 
-        List<String> addressList = new ArrayList<>();
+        List<String> addressList = new LinkedList<>();
         nameList.add("4");
         nameList.add("Private Drive");
 
-        List<String> contactList = new ArrayList<>();
+        List<String> contactList = new LinkedList<>();
         nameList.add("Hedwig");
 
-        List<String> entry1 = new ArrayList<>();
+        List<String> entry1 = new LinkedList<>();
         entry1.addAll(nameList);
         entry1.remove("Harry");
 
-        List<String> entry2 = new ArrayList<>();
+        List<String> entry2 = new LinkedList<>();
         entry2.addAll(entry1);
         entry2.addAll(addressList);
 
-        List<String> entry3 = new ArrayList<>();
+        List<String> entry3 = new LinkedList<>();
         entry3.addAll(contactList);
         entry2.addAll(addressList);
 

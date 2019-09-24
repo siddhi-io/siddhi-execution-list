@@ -31,7 +31,7 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class CreateFunctionExtensionTestCase {
@@ -53,7 +53,7 @@ public class CreateFunctionExtensionTestCase {
 
         String inStreamDefinition = "\ndefine stream inputStream (symbol string, price long, volume long);";
         String query = ("@info(name = 'query1') from inputStream select symbol,price, "
-                + "list:create(symbol,price) as arrayList insert into outputStream;");
+                + "list:create(symbol,price) as LinkedList insert into outputStream;");
 
         SiddhiAppRuntime siddhiAppRuntime = siddhiManager.createSiddhiAppRuntime(
                 inStreamDefinition + query);
@@ -65,19 +65,19 @@ public class CreateFunctionExtensionTestCase {
                 for (Event event : inEvents) {
                     count.incrementAndGet();
                     if (count.get() == 1) {
-                        ArrayList list = (ArrayList) event.getData(2);
+                        LinkedList list = (LinkedList) event.getData(2);
                         AssertJUnit.assertEquals("IBM", list.get(0));
                         AssertJUnit.assertEquals(100, list.get(1));
                         eventArrived = true;
                     }
                     if (count.get() == 2) {
-                        ArrayList list = (ArrayList) event.getData(2);
+                        LinkedList list = (LinkedList) event.getData(2);
                         AssertJUnit.assertEquals("WSO2", list.get(0));
                         AssertJUnit.assertEquals(200, list.get(1));
                         eventArrived = true;
                     }
                     if (count.get() == 3) {
-                        ArrayList list = (ArrayList) event.getData(2);
+                        LinkedList list = (LinkedList) event.getData(2);
                         AssertJUnit.assertEquals("XYZ", list.get(0));
                         AssertJUnit.assertEquals(300, list.get(1));
                         eventArrived = true;
@@ -105,7 +105,7 @@ public class CreateFunctionExtensionTestCase {
 
         String inStreamDefinition = "\ndefine stream inputStream (symbol string, price long, volume long);";
         String query = ("@info(name = 'query1') from inputStream select symbol,price, "
-                + "list:create() as arrayList insert into outputStream;");
+                + "list:create() as LinkedList insert into outputStream;");
 
         SiddhiAppRuntime siddhiAppRuntime = siddhiManager.createSiddhiAppRuntime(
                 inStreamDefinition + query);
@@ -116,7 +116,7 @@ public class CreateFunctionExtensionTestCase {
                 EventPrinter.print(timeStamp, inEvents, removeEvents);
                 for (Event event : inEvents) {
                     count.incrementAndGet();
-                    ArrayList list = (ArrayList) event.getData(2);
+                    LinkedList list = (LinkedList) event.getData(2);
                     AssertJUnit.assertEquals(0, list.size());
                     eventArrived = true;
                 }
@@ -141,7 +141,7 @@ public class CreateFunctionExtensionTestCase {
 
         String inStreamDefinition = "\ndefine stream inputStream (symbol string, price long, volume long);";
         String query = ("@info(name = 'query1') from inputStream "
-                + "select list:create(\"value1\",\"value2\",symbol,price) as arrayList "
+                + "select list:create(\"value1\",\"value2\",symbol,price) as LinkedList "
                 + "insert into outputStream;");
 
         SiddhiAppRuntime siddhiAppRuntime = siddhiManager.createSiddhiAppRuntime(
@@ -153,7 +153,7 @@ public class CreateFunctionExtensionTestCase {
                 EventPrinter.print(inEvents);
                 for (Event event : inEvents) {
                     count.incrementAndGet();
-                    ArrayList list = (ArrayList) event.getData(0);
+                    LinkedList list = (LinkedList) event.getData(0);
                     AssertJUnit.assertEquals("value1", list.get(0));
                     AssertJUnit.assertEquals("value2", list.get(1));
                     if (count.get() == 1) {

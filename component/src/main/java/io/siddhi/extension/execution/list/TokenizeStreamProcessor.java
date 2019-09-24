@@ -43,6 +43,7 @@ import io.siddhi.query.api.definition.AbstractDefinition;
 import io.siddhi.query.api.definition.Attribute;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -86,7 +87,7 @@ import java.util.List;
         }
 )
 public class TokenizeStreamProcessor extends StreamProcessor<State> {
-   private List<Attribute> attributesList = new ArrayList<>();
+   private List<Attribute> attributesList = new ArrayList<>(2);
    private ExpressionExecutor[] expressionExecutor;
    private int numList;
 
@@ -111,7 +112,7 @@ public class TokenizeStreamProcessor extends StreamProcessor<State> {
         while (complexEventChunk.hasNext()) {
             StreamEvent event = complexEventChunk.next();
 
-            List<List<Object>> dataList = new ArrayList<>();
+            List<List<Object>> dataList = new ArrayList<>(this.expressionExecutor.length);
             for (int i = 0; i < this.expressionExecutor.length; i++) {
                 Object listObject = this.expressionExecutor[i].execute(event);
                 if (!(listObject instanceof List)) {
@@ -134,7 +135,7 @@ public class TokenizeStreamProcessor extends StreamProcessor<State> {
                 if (this.numList == 1) {
                     data = new Object[]{i, dataList.get(0).get(i)};
                 } else {
-                    List<Object> value = new ArrayList<>();
+                    List<Object> value = new LinkedList<>();
                     for (int j = 0; j < this.numList; j++) {
                         if (dataList.get(j).size() > i) {
                             value.add(dataList.get(j).get(i));

@@ -34,7 +34,7 @@ import io.siddhi.core.util.snapshot.state.State;
 import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -145,7 +145,7 @@ public class MergeAggregateFunction extends AttributeAggregatorExecutor<State> {
 
     @Override
     public Object reset(State state) {
-        ((ListState) state).dataList = new ArrayList<>();
+        ((ListState) state).dataList = new LinkedList<>();
         return ((ListState) state).getClonedDataList();
     }
 }

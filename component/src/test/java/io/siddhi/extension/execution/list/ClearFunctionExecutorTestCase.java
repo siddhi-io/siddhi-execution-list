@@ -31,7 +31,7 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ClearFunctionExecutorTestCase {
@@ -74,7 +74,7 @@ public class ClearFunctionExecutorTestCase {
                 EventPrinter.print(events);
                 for (Event event : events) {
                     count.incrementAndGet();
-                    AssertJUnit.assertEquals(new ArrayList<>(), event.getData(0));
+                    AssertJUnit.assertEquals(new LinkedList<>(), event.getData(0));
                     eventArrived = true;
                 }
             }

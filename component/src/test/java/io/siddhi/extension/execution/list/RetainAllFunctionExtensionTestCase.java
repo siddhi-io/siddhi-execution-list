@@ -31,7 +31,7 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class RetainAllFunctionExtensionTestCase {
@@ -70,7 +70,7 @@ public class RetainAllFunctionExtensionTestCase {
                 EventPrinter.print(events);
                 for (Event event : events) {
                     count.incrementAndGet();
-                    ArrayList list = (ArrayList) event.getData(1);
+                    LinkedList list = (LinkedList) event.getData(1);
                     if (count.get() == 1) {
                         AssertJUnit.assertEquals(2, list.size());
                         AssertJUnit.assertTrue(list.contains("IBM"));

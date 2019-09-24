@@ -31,7 +31,7 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SetFunctionExtensionTestCase {
@@ -69,17 +69,17 @@ public class SetFunctionExtensionTestCase {
                 for (Event event : events) {
                     count.incrementAndGet();
                     if (count.get() == 1) {
-                        ArrayList map = (ArrayList) event.getData(3);
+                        LinkedList map = (LinkedList) event.getData(3);
                         AssertJUnit.assertEquals("IBM", map.get(0));
                         eventArrived = true;
                     }
                     if (count.get() == 2) {
-                        ArrayList map = (ArrayList) event.getData(3);
+                        LinkedList map = (LinkedList) event.getData(3);
                         AssertJUnit.assertEquals("WSO2", map.get(0));
                         eventArrived = true;
                     }
                     if (count.get() == 3) {
-                        ArrayList map = (ArrayList) event.getData(3);
+                        LinkedList map = (LinkedList) event.getData(3);
                         AssertJUnit.assertEquals("XYZ", map.get(0));
                         eventArrived = true;
                     }

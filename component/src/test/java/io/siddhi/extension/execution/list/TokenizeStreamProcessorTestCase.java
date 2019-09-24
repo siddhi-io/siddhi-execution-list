@@ -32,6 +32,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -154,10 +155,10 @@ public class TokenizeStreamProcessorTestCase {
         SiddhiTestHelper.waitForEvents(100, 3, count, 60000);
 
         List<Object[]> expected = Arrays.asList(
-                new Object[]{0, new ArrayList<>(Arrays.asList("one", "four"))},
-                new Object[]{1, new ArrayList<>(Arrays.asList("two", "five"))},
-                new Object[]{2, new ArrayList<>(Arrays.asList("three", "six"))},
-                new Object[]{3, new ArrayList<>(Arrays.asList("seven", null))}
+                new Object[]{0, new LinkedList<>(Arrays.asList("one", "four"))},
+                new Object[]{1, new LinkedList<>(Arrays.asList("two", "five"))},
+                new Object[]{2, new LinkedList<>(Arrays.asList("three", "six"))},
+                new Object[]{3, new LinkedList<>(Arrays.asList("seven", null))}
         );
         AssertJUnit.assertTrue(eventArrived);
         AssertJUnit.assertEquals(4, count.get());

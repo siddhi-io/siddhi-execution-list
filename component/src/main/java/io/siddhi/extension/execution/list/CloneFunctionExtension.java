@@ -33,7 +33,7 @@ import io.siddhi.core.util.snapshot.state.State;
 import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -83,7 +83,7 @@ public class CloneFunctionExtension extends FunctionExecutor<State> {
     @Override
     protected Object execute(Object data, State state) {
         if (data instanceof List) {
-            return new ArrayList<Object>((List) data);
+            return new LinkedList<Object>((List) data);
         }
         throw new SiddhiAppRuntimeException("First attribute needs be an instance of java.util.List, but found '" +
                 data.getClass().getCanonicalName() + "'.");

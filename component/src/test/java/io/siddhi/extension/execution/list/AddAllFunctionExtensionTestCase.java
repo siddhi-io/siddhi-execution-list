@@ -30,7 +30,7 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AddAllFunctionExtensionTestCase {
@@ -67,7 +67,7 @@ public class AddAllFunctionExtensionTestCase {
                 EventPrinter.print(events);
                 for (Event event : events) {
                     count.incrementAndGet();
-                    ArrayList list = (ArrayList) event.getData(0);
+                    LinkedList list = (LinkedList) event.getData(0);
                     AssertJUnit.assertEquals("one", list.get(0));
                     AssertJUnit.assertEquals("six", list.get(5));
                     eventArrived = true;
@@ -104,7 +104,7 @@ public class AddAllFunctionExtensionTestCase {
                 for (Event event : events) {
                     EventPrinter.print(events);
                     count.incrementAndGet();
-                    ArrayList list = (ArrayList) event.getData(0);
+                    LinkedList list = (LinkedList) event.getData(0);
                     AssertJUnit.assertEquals(1, list.get(0));
                     AssertJUnit.assertEquals(6, list.get(5));
                     AssertJUnit.assertEquals(9, list.get(8));
@@ -157,7 +157,7 @@ public class AddAllFunctionExtensionTestCase {
                 for (Event event : events) {
                     EventPrinter.print(events);
                     count.incrementAndGet();
-                    ArrayList list = (ArrayList) event.getData(0);
+                    LinkedList list = (LinkedList) event.getData(0);
                     AssertJUnit.assertEquals(9, list.size());
                     AssertJUnit.assertEquals(1, list.get(0));
                     AssertJUnit.assertEquals(6, list.get(5));

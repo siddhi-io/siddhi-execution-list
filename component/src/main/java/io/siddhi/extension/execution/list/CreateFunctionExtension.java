@@ -32,8 +32,8 @@ import io.siddhi.core.util.snapshot.state.State;
 import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -85,15 +85,15 @@ public class CreateFunctionExtension extends FunctionExecutor<State> {
 
     @Override
     protected Object execute(Object[] data, State state) {
-        return new ArrayList<>(Arrays.asList(data));
+        return new LinkedList<>(Arrays.asList(data));
     }
 
     @Override
     protected Object execute(Object data, State state) {
         if (data == null) {
-            return new ArrayList<>();
+            return new LinkedList<>();
         }
-        List<Object> list = new ArrayList<>();
+        List<Object> list = new LinkedList<>();
         list.add(data);
         return list;
     }

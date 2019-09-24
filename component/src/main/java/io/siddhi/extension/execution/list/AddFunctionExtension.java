@@ -36,10 +36,10 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * add(ArrayList , value)
+ * add(LinkedList , value)
  * Returns the updated array list.
- * Accept Type(s): (ArrayList , ValidAttributeType , int)
- * Return Type(s): ArrayList
+ * Accept Type(s): (LinkedList , ValidAttributeType , int)
+ * Return Type(s): LinkedList
  */
 @Extension(
         name = "add",

@@ -32,6 +32,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CollectAggregatorFunctionTestCase {
@@ -70,7 +71,7 @@ public class CollectAggregatorFunctionTestCase {
                 for (Event event : events) {
                     inEventCount++;
                     if (inEventCount == 1) {
-                        ArrayList<String> studentDetails = (ArrayList) event.getData(0);
+                        LinkedList<String> studentDetails = (LinkedList) event.getData(0);
                         AssertJUnit.assertEquals("name", studentDetails.get(0));
                         AssertJUnit.assertEquals("middleName", studentDetails.get(1));
                         AssertJUnit.assertEquals("surName", studentDetails.get(2));
@@ -128,13 +129,13 @@ public class CollectAggregatorFunctionTestCase {
         InputHandler inputHandler = siddhiAppRuntime.getInputHandler("cscStream");
         siddhiAppRuntime.start();
 
-        List<String> entry1 = new ArrayList<>();
+        List<String> entry1 = new LinkedList<>();
         entry1.add("Harry");
 
-        List<String> entry2 = new ArrayList<>();
+        List<String> entry2 = new LinkedList<>();
         entry2.add("Harry");
 
-        List<String> entry3 = new ArrayList<>();
+        List<String> entry3 = new LinkedList<>();
         entry3.add("Henry");
 
         List<Object[]> expected = Arrays.asList(

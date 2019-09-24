@@ -31,7 +31,7 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class RemoveFunctionExtensionTestCase {
@@ -70,17 +70,17 @@ public class RemoveFunctionExtensionTestCase {
                 for (Event event : events) {
                     count.incrementAndGet();
                     if (count.get() == 1) {
-                        ArrayList list = (ArrayList) event.getData(1);
+                        LinkedList list = (LinkedList) event.getData(1);
                         AssertJUnit.assertFalse(list.contains("IBM"));
                         eventArrived = true;
                     }
                     if (count.get() == 2) {
-                        ArrayList list = (ArrayList) event.getData(1);
+                        LinkedList list = (LinkedList) event.getData(1);
                         AssertJUnit.assertTrue(list.contains("WSO2"));
                         eventArrived = true;
                     }
                     if (count.get() == 3) {
-                        ArrayList list = (ArrayList) event.getData(1);
+                        LinkedList list = (LinkedList) event.getData(1);
                         AssertJUnit.assertTrue(list.contains("XYZ"));
                         eventArrived = true;
                     }

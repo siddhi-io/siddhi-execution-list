@@ -20,8 +20,8 @@ package io.siddhi.extension.execution.list;
 
 import io.siddhi.core.util.snapshot.state.State;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +30,7 @@ import java.util.Map;
  */
 public class ListState extends State {
 
-    public List<Object> dataList = new ArrayList<>();
+    public List<Object> dataList = new LinkedList<>();
 
     @Override
     public boolean canDestroy() {
@@ -45,10 +45,10 @@ public class ListState extends State {
 
     @Override
     public void restore(Map<String, Object> state) {
-        dataList = ((ArrayList) state.get("dataList"));
+        dataList = ((LinkedList) state.get("dataList"));
     }
 
     public List<Object> getClonedDataList() {
-        return new ArrayList<>(dataList);
+        return new LinkedList<>(dataList);
     }
 }

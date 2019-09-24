@@ -36,7 +36,7 @@ import java.util.List;
 
 /**
  * isList(Object)
- * Returns boolean true if the object is a arrayList, boolean false if it is not .
+ * Returns boolean true if the object is a LinkedList, boolean false if it is not .
  * Accept Type(s): (Object)
  * Return Type(s): boolean
  */
@@ -82,7 +82,6 @@ public class IsListFunctionExtension extends FunctionExecutor<State> {
         if (data instanceof List) {
             return Boolean.TRUE;
         }
-
         return Boolean.FALSE;
     }
 

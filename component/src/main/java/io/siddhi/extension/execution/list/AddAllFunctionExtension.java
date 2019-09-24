@@ -32,14 +32,10 @@ import io.siddhi.core.util.snapshot.state.State;
 import io.siddhi.core.util.snapshot.state.StateFactory;
 import io.siddhi.query.api.definition.Attribute;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
- * addAll(arrayList , arrayList)
- * Returns the updated arrayList.
- * Accept Type(s): (arrayList , arrayList)
- * Return Type(s): arrayList
+ * addAll(list , list)
  */
 @Extension(
         name = "addAll",
@@ -111,8 +107,8 @@ public class AddAllFunctionExtension extends FunctionExecutor<State> {
             throw new SiddhiAppRuntimeException("Second attribute value must be of type java.util.List, but found '" +
                     data[1].getClass().getCanonicalName() + "'.");
         }
-        ArrayList<Object> list1 = (ArrayList<Object>) data[0];
-        ArrayList<Object> list2 = (ArrayList<Object>) data[1];
+        List<Object> list1 = (List<Object>) data[0];
+        List<Object> list2 = (List<Object>) data[1];
 
         if (this.isDistinctCheck && (boolean) data[2]) {
             list2.forEach((element) -> {

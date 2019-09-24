@@ -36,10 +36,10 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * remove(ArrayList , value)
+ * remove(LinkedList , value)
  * Returns the updated array list
- * Accept Type(s): (ArrayList , ValidAttributeType)
- * Return Type(s): ArrayList
+ * Accept Type(s): (LinkedList , ValidAttributeType)
+ * Return Type(s): LinkedList
  */
 @Extension(
         name = "remove",
