@@ -33,6 +33,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:size.
+ */
 public class SizeFunctionExecutorTestCase {
     private static final Logger log = Logger.getLogger(SizeFunctionExecutorTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

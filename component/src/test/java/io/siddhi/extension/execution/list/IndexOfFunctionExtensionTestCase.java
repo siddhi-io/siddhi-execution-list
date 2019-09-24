@@ -32,6 +32,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:indexOf and list:lastIndexOf.
+ */
 public class IndexOfFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(IndexOfFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

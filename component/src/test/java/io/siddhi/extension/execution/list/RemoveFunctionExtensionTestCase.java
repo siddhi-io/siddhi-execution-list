@@ -34,6 +34,9 @@ import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:remove.
+ */
 public class RemoveFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(RemoveFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

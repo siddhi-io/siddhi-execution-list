@@ -47,7 +47,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Implementation class for list:tokenize()
+ * Implementation class for list:tokenize().
  */
 @Extension(
         namespace = "list",

@@ -36,7 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.LinkedList;
 
 /**
- * Implementation class for list:collect()
+ * Implementation class for list:collect().
  */
 @Extension(
         namespace = "list",

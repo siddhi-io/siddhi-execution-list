@@ -34,6 +34,9 @@ import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:clear.
+ */
 public class ClearFunctionExecutorTestCase {
     private static final Logger log = Logger.getLogger(ClearFunctionExecutorTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

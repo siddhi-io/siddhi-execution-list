@@ -34,6 +34,9 @@ import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:setValue.
+ */
 public class SetFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(SetFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

@@ -33,6 +33,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:contains.
+ */
 public class ContainsFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(ContainsFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

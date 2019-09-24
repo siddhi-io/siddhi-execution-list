@@ -33,6 +33,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:isList.
+ */
 public class IsListFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(IsListFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

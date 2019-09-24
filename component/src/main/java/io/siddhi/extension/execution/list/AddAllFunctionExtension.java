@@ -35,7 +35,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * addAll(list , list)
+ * addAll(list , list) implementation.
  */
 @Extension(
         name = "addAll",

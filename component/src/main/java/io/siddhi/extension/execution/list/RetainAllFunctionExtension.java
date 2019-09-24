@@ -36,10 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * removeAll(LinkedList , LinkedList)
- * Returns the updated array list
- * Accept Type(s): (LinkedList , LinkedList)
- * Return Type(s): LinkedList
+ * removeAll(LinkedList , LinkedList) implementation.
  */
 @Extension(
         name = "retainAll",

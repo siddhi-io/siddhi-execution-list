@@ -33,6 +33,9 @@ import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:addAll.
+ */
 public class AddAllFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(AddAllFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

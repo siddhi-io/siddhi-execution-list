@@ -36,6 +36,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Test case for list:merge.
+ */
 public class MergeAggregateFunctionTestCase {
     private static final Logger log = Logger.getLogger(MergeAggregateFunctionTestCase.class);
     private boolean eventArrived;

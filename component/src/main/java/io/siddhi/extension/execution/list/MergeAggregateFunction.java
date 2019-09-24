@@ -38,7 +38,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Implementation class for list:merge()
+ * Implementation class for list:merge().
  */
 @Extension(
         namespace = "list",

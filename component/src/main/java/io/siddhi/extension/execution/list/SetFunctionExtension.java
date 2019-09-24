@@ -36,7 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * set(LinkedList , index,  value)
+ * set(LinkedList , index,  value) implementation.
  */
 @Extension(
         name = "setValue",

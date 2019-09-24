@@ -35,6 +35,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Test case for list:collect.
+ */
 public class CollectAggregatorFunctionTestCase {
     private static final Logger log = Logger.getLogger(CollectAggregatorFunctionTestCase.class);
     private boolean eventArrived;

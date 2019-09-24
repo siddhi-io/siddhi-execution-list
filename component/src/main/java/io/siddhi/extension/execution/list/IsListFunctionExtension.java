@@ -35,10 +35,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * isList(Object)
- * Returns boolean true if the object is a LinkedList, boolean false if it is not .
- * Accept Type(s): (Object)
- * Return Type(s): boolean
+ * isList(Object) implementation.
  */
 @Extension(
         name = "isList",

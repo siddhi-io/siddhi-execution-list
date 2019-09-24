@@ -34,6 +34,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:sort.
+ */
 public class SortFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(SortFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

@@ -36,10 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * removeByIndex(LinkedList , index)
- * Returns the updated array list
- * Accept Type(s): (LinkedList , ValidAttributeType)
- * Return Type(s): LinkedList
+ * removeByIndex(LinkedList , index) implementation.
  */
 @Extension(
         name = "removeByIndex",

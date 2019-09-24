@@ -34,6 +34,9 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:clone.
+ */
 public class CloneFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(CloneFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

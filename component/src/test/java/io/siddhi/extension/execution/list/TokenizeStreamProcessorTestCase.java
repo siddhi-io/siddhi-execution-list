@@ -36,6 +36,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:tokenize.
+ */
 public class TokenizeStreamProcessorTestCase {
     private static final Logger log = Logger.getLogger(TokenizeStreamProcessorTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

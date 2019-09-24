@@ -36,7 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * contains(Object)
+ * contains(Object) implementation.
  */
 @Extension(
         name = "contains",

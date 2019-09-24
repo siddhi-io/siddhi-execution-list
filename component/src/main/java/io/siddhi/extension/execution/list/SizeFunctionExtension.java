@@ -36,7 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * Implementation class for list:size()
+ * Implementation class for list:size().
  */
 @Extension(
         namespace = "list",

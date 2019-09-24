@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * State to maintained collected list
+ * State to maintained collected list.
  */
 public class ListState extends State {
 

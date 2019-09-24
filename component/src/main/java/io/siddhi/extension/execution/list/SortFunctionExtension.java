@@ -41,7 +41,7 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Implementation of sort() function
+ * Implementation of sort() function.
  */
 @Extension(
         name = "sort",

@@ -36,7 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * IndexOf(Object, value)
+ * IndexOf(Object, value) implementation.
  */
 @Extension(
         name = "lastIndexOf",

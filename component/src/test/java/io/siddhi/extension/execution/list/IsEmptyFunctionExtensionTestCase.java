@@ -33,6 +33,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:isEmpty.
+ */
 public class IsEmptyFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(IsEmptyFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

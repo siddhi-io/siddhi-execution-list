@@ -34,6 +34,9 @@ import org.testng.annotations.Test;
 import java.util.LinkedList;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Test case for list:retainAll.
+ */
 public class RetainAllFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(RetainAllFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);

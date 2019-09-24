@@ -36,10 +36,7 @@ import io.siddhi.query.api.definition.Attribute;
 import java.util.List;
 
 /**
- * isEmpty(Object)
- * Returns boolean true if the object is empty list, boolean false if it is not .
- * Accept Type(s): (Object)
- * Return Type(s): boolean
+ * isEmpty(Object) implementation.
  */
 @Extension(
         name = "isEmpty",
