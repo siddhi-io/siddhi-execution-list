@@ -35,5 +35,4 @@ pages:
 - API Docs:
   - latest: api/latest.md
   - 1.0.0: api/1.0.0.md
-  - ? ''
-    : api/.md
+- License: license.md
