@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Siddhi-execution-list-Test-Suite">
+    <test name="Siddhi-execution-list-tests" preserve-order="true" parallel="false">
+        <classes>
+            <class name="io.siddhi.extension.execution.list.AddAllFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.AddFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.CloneFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.CollectAggregatorFunctionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.ContainsAllFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.ContainsFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.CreateFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.GetFunctionExtensionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.IndexOfFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.IsEmptyFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.IsListFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.MergeAggregateFunctionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.RemoveAllFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.RemoveFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.SizeFunctionExecutorTestCase"/>
+            <class name="io.siddhi.extension.execution.list.SortFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.TokenizeStreamProcessorTestCase"/>
+            <class name="io.siddhi.extension.execution.list.ClearFunctionExecutorTestCase"/>
+            <class name="io.siddhi.extension.execution.list.RemoveByIndexFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.RetainAllFunctionExtensionTestCase"/>
+            <class name="io.siddhi.extension.execution.list.SetFunctionExtensionTestCase"/>
+        </classes>
+    </test>
+</suite>
