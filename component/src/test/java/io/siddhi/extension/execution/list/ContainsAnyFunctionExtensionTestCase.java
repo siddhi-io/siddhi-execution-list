@@ -33,6 +33,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Testcases for ContainsAnyFunctionExtension.
+ */
 public class ContainsAnyFunctionExtensionTestCase {
     private static final Logger log = Logger.getLogger(ContainsAllFunctionExtensionTestCase.class);
     private AtomicInteger count = new AtomicInteger(0);
@@ -106,7 +109,8 @@ public class ContainsAnyFunctionExtensionTestCase {
                         "@info(name = 'query2') " +
                         "from tmpStream  " +
                         "select symbol, price, " +
-                        " list:add(list:add(list:add(tmpList1,'a'),'b'),'c') as list1, list:add(tmpList2,'z') as list2 " +
+                        "list:add(list:add(list:add(tmpList1,'a'),'b'),'c') as list1, " +
+                        "list:add(tmpList2,'z') as list2 " +
                         " insert into outputStream;" +
 
                         "@info(name = 'query3') " +
