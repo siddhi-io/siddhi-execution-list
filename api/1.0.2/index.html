@@ -38,7 +38,7 @@
     
     
       
-        <title>1.0.1 - Siddhi Execution List</title>
+        <title>1.0.2 - Siddhi Execution List</title>
       
     
     
@@ -114,7 +114,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#api-docs-v101" tabindex="1" class="md-skip">
+      <a href="#api-docs-v102" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -140,7 +140,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                1.0.1
+                1.0.2
               
             </span>
           
@@ -294,18 +294,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../1.0.2/" title="1.0.2" class="md-nav__link">
-      1.0.2
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -317,11 +305,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        1.0.1
+        1.0.2
       </label>
     
-    <a href="./" title="1.0.1" class="md-nav__link md-nav__link--active">
-      1.0.1
+    <a href="./" title="1.0.2" class="md-nav__link md-nav__link--active">
+      1.0.2
     </a>
     
       
@@ -394,6 +382,13 @@
           <li class="md-nav__item">
   <a href="#containsall-function" title="containsAll (Function)" class="md-nav__link">
     containsAll (Function)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#containsany-function" title="containsAny (Function)" class="md-nav__link">
+    containsAny (Function)
   </a>
   
 </li>
@@ -509,6 +504,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1.0.1/" title="1.0.1" class="md-nav__link">
+      1.0.1
+    </a>
   </li>
 
         
@@ -638,6 +645,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#containsany-function" title="containsAny (Function)" class="md-nav__link">
+    containsAny (Function)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#create-function" title="create (Function)" class="md-nav__link">
     create (Function)
   </a>
@@ -756,12 +770,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/siddhi-io/siddhi-execution-list/blob/master/api/1.0.1.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/siddhi-io/siddhi-execution-list/blob/master/api/1.0.2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="api-docs-v101">API Docs - v1.0.1</h1>
+                <h1 id="api-docs-v102">API Docs - v1.0.2</h1>
 <div class="admonition info">
-<p class="admonition-title">Tested Siddhi Core version: <em><a target="_blank" href="http://siddhi.io/en/v5.1/docs/query-guide/">5.1.14</a></em></p>
+<p class="admonition-title">Tested Siddhi Core version: <em><a target="_blank" href="http://siddhi.io/en/v5.1/docs/query-guide/">5.1.31</a></em></p>
 <p>It could also support other Siddhi Core minor versions.</p>
 </div>
 <h2 id="list">List</h2>
@@ -1158,6 +1172,52 @@ insert into OutputStream;
 <p></p>
 
 <p style="word-wrap: break-word;margin: 0;">Returns 'true' if the stockSymbols list contains values in latestStockSymbols else it returns <code>false</code>.</p>
+
+<p></p>
+
+<h3 id="containsany-function">containsAny <em><a target="_blank" href="http://siddhi.io/en/v5.1/docs/query-guide/#function">(Function)</a></em></h3>
+<p><p></p>
+<p style="word-wrap: break-word;margin: 0;">Function checks whether the two specified lists have any common elements.</p>
+<p></p>
+<span id="syntax" class="md-typeset" style="display: block; font-weight: bold;">Syntax</span></p>
+<pre><code>&lt;BOOL&gt; list:containsAny(&lt;OBJECT&gt; list, &lt;OBJECT&gt; given.list)
+</code></pre>
+
+<p><span id="query-parameters" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">QUERY PARAMETERS</span>
+<table>
+    <tr>
+        <th>Name</th>
+        <th style="min-width: 20em">Description</th>
+        <th>Default Value</th>
+        <th>Possible Data Types</th>
+        <th>Optional</th>
+        <th>Dynamic</th>
+    </tr>
+    <tr>
+        <td style="vertical-align: top">list</td>
+        <td style="vertical-align: top; word-wrap: break-word"><p style="word-wrap: break-word;margin: 0;">The list that needs to be checked on whether it contains any of the values or not.</p></td>
+        <td style="vertical-align: top"></td>
+        <td style="vertical-align: top">OBJECT</td>
+        <td style="vertical-align: top">No</td>
+        <td style="vertical-align: top">Yes</td>
+    </tr>
+    <tr>
+        <td style="vertical-align: top">given.list</td>
+        <td style="vertical-align: top; word-wrap: break-word"><p style="word-wrap: break-word;margin: 0;">The list which contains any of the values to be checked.</p></td>
+        <td style="vertical-align: top"></td>
+        <td style="vertical-align: top">OBJECT</td>
+        <td style="vertical-align: top">No</td>
+        <td style="vertical-align: top">Yes</td>
+    </tr>
+</table></p>
+<p><span id="examples" class="md-typeset" style="display: block; font-weight: bold;">Examples</span>
+<span id="example-1" class="md-typeset" style="display: block; color: rgba(0, 0, 0, 0.54); font-size: 12.8px; font-weight: bold;">EXAMPLE 1</span></p>
+<pre><code>list:containsAny(stockSymbols, latestStockSymbols)
+</code></pre>
+
+<p></p>
+
+<p style="word-wrap: break-word;margin: 0;">Returns 'true' if the stockSymbols list contains any value in latestStockSymbols else it returns <code>false</code>.</p>
 
 <p></p>
 
@@ -1834,7 +1894,7 @@ list:tokenize(&lt;OBJECT&gt; list, &lt;OBJECT&gt; ...)
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../1.0.2/" title="1.0.2" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../latest/" title="latest" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1843,19 +1903,19 @@ list:tokenize(&lt;OBJECT&gt; list, &lt;OBJECT&gt; ...)
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                1.0.2
+                latest
               </span>
             </div>
           </a>
         
         
-          <a href="../1.0.0/" title="1.0.0" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../1.0.1/" title="1.0.1" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                1.0.0
+                1.0.1
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
