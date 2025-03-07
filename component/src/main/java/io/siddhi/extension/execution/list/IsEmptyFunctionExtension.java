@@ -60,6 +60,8 @@ import java.util.List;
                 description = "Returns 'true' if the stockSymbols list is empty else it returns `false`.")
 )
 public class IsEmptyFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = -3554614980027450945L;
     private Attribute.Type returnType = Attribute.Type.BOOL;
 
     @Override

@@ -70,6 +70,8 @@ import java.util.List;
                 )
 )
 public class ContainsFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = 6524590597160303048L;
     private Attribute.Type returnType = Attribute.Type.BOOL;
 
     @Override

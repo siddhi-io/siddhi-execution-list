@@ -64,6 +64,8 @@ import java.util.List;
         )
 )
 public class ClearFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = -1969315779590868090L;
     private Attribute.Type returnType = Attribute.Type.OBJECT;
 
     @Override

@@ -73,6 +73,8 @@ import java.util.List;
 )
 public class GetFunctionExtension extends FunctionExecutor<State> {
 
+    private static final long serialVersionUID = 3597046964541803438L;
+
     @Override
     protected StateFactory<State> init(ExpressionExecutor[] expressionExecutors, ConfigReader configReader,
                                 SiddhiQueryContext siddhiQueryContext) {

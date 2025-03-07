@@ -78,6 +78,8 @@ import java.util.List;
         }
 )
 public class SetFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = 1738557135780657583L;
     private Attribute.Type returnType = Attribute.Type.OBJECT;
 
     @Override

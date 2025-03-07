@@ -70,6 +70,8 @@ import java.util.List;
         )
 )
 public class LastIndexOfFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = -7281340587561268025L;
     private Attribute.Type returnType = Attribute.Type.INT;
 
     @Override

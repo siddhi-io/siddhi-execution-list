@@ -16,4 +16,9 @@
   ~ specific language governing permissions and limitations
   ~ under the License.
   -->
-<FindBugsFilter/>
+<FindBugsFilter>
+    <Match>
+        <Class name="io.siddhi.extension.execution.list.SortFunctionExtension"/>
+        <Bug pattern="IMPROPER_UNICODE"/>
+    </Match>
+</FindBugsFilter>

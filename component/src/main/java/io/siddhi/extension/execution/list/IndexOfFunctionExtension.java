@@ -69,6 +69,8 @@ import java.util.List;
         )
 )
 public class IndexOfFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = -8389973261520160350L;
     private Attribute.Type returnType = Attribute.Type.INT;
 
     @Override

@@ -67,6 +67,8 @@ import java.util.List;
         )
 )
 public class RetainAllFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = 4185042773762878423L;
     private Attribute.Type returnType = Attribute.Type.OBJECT;
 
     @Override

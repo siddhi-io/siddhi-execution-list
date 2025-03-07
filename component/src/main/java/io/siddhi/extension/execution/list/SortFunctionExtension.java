@@ -78,6 +78,8 @@ import java.util.Locale;
         }
 )
 public class SortFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = -2875109522710026402L;
     private Attribute.Type returnType = Attribute.Type.OBJECT;
     private SortType sortType = SortType.ASC;
 
