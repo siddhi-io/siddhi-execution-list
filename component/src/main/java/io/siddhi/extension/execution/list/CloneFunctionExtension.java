@@ -65,6 +65,8 @@ import java.util.List;
                 )
 )
 public class CloneFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = -5356980542275005368L;
     private Attribute.Type returnType = Attribute.Type.OBJECT;
 
     @Override

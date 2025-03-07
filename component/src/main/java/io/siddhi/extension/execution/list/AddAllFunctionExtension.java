@@ -87,6 +87,8 @@ import java.util.List;
                 }
 )
 public class AddAllFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = -5832032635507353427L;
     private Attribute.Type returnType = Attribute.Type.OBJECT;
     private boolean isDistinctCheck = false;
 

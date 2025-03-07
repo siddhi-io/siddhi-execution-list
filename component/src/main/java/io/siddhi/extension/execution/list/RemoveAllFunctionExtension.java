@@ -67,6 +67,8 @@ import java.util.List;
         )
 )
 public class RemoveAllFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = 9095664309891571736L;
     private Attribute.Type returnType = Attribute.Type.OBJECT;
 
     @Override

@@ -81,6 +81,8 @@ import java.util.LinkedList;
 )
 public class CollectAggregateFunction extends AttributeAggregatorExecutor<State> {
 
+    private static final long serialVersionUID = -7404281171321015312L;
+
     @Override
     protected StateFactory<State> init(ExpressionExecutor[] expressionExecutors, ProcessingMode processingMode,
                                        boolean outputExpectsExpiredEvents, ConfigReader configReader,

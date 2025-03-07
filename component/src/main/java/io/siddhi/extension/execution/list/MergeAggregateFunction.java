@@ -81,6 +81,9 @@ import java.util.List;
         }
 )
 public class MergeAggregateFunction extends AttributeAggregatorExecutor<State> {
+
+    private static final long serialVersionUID = -2226481654190426058L;
+
     @Override
     protected StateFactory<State> init(ExpressionExecutor[] attributeExpressionExecutors, ProcessingMode processingMode,
                                        boolean outputExpectsExpiredEvents, ConfigReader configReader,

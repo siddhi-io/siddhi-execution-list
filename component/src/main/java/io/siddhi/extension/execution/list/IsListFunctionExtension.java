@@ -61,6 +61,8 @@ import java.util.List;
                         "it returns `false`.")
 )
 public class IsListFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = -4193711925260715811L;
     private Attribute.Type returnType = Attribute.Type.BOOL;
 
     @Override

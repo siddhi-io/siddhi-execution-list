@@ -62,6 +62,8 @@ import java.util.List;
 )
 public class SizeFunctionExtension extends FunctionExecutor<State> {
 
+    private static final long serialVersionUID = -8267122377756127535L;
+
     @Override
     protected StateFactory<State> init(ExpressionExecutor[] attributeExpressionExecutors,
                                        ConfigReader configReader, SiddhiQueryContext siddhiQueryContext) {

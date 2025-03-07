@@ -18,9 +18,9 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>io.siddhi</groupId>
-        <artifactId>siddhi</artifactId>
-        <version>5.0.0</version>
+        <artifactId>wso2</artifactId>
+        <groupId>org.wso2</groupId>
+        <version>5.3</version>
     </parent>
     <groupId>io.siddhi.extension.execution.list</groupId>
     <artifactId>siddhi-execution-list-parent</artifactId>
@@ -45,6 +45,7 @@
         <log4j.version>1.2.17</log4j.version>
         <testng.version>6.11</testng.version>
         <jacoco.maven.version>0.7.8</jacoco.maven.version>
+        <maven.findbugsplugin.version.exclude>findbugs-exclude.xml</maven.findbugsplugin.version.exclude>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -127,6 +128,13 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <configuration>
+                    <excludeFilterFile>${maven.findbugsplugin.version.exclude}</excludeFilterFile>
+                </configuration>
             </plugin>
         </plugins>
     </build>

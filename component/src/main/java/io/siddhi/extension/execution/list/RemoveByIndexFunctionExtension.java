@@ -66,6 +66,8 @@ import java.util.List;
         )
 )
 public class RemoveByIndexFunctionExtension extends FunctionExecutor<State> {
+
+    private static final long serialVersionUID = 3789562834548265566L;
     private Attribute.Type returnType = Attribute.Type.OBJECT;
 
     @Override
